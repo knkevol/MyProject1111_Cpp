@@ -39,6 +39,11 @@ void ACharacter1111::Jump()
 	Super::Jump();
 }
 
+void ACharacter1111::StopJumping()
+{
+	Super::StopJumping();
+}
+
 
 // Called to bind functionality to input
 void ACharacter1111::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -62,6 +67,11 @@ void ACharacter1111::Move(float InPitch, float InRoll)
 void ACharacter1111::Jump11()
 {
 	Jump();
+}
+
+void ACharacter1111::StopJumping11()
+{
+	StopJumping();
 }
 
 

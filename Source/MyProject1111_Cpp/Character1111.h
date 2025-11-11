@@ -27,6 +27,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void Jump() override;
+	virtual void StopJumping() override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -46,4 +47,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "1111")
 	void Jump11();
+
+	UFUNCTION(BlueprintCallable, Category = "1111")
+	void StopJumping11();
 };
