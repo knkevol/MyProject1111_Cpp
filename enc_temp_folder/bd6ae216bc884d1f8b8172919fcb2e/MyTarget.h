@@ -50,7 +50,5 @@ public:
 	void DoDesigner2(); //구현X
 	void DoDesigner2_Implementation();
 
-	UFUNCTION(BlueprintPure)
-	int32 GetGold();
 
 };

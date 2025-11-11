@@ -52,8 +52,3 @@ void AMyTarget::ProcessTakeDamage(AActor* DamagedActor, float Damage, const UDam
 void AMyTarget::DoDesigner2_Implementation()
 {
 }
-
-int32 AMyTarget::GetGold()
-{
-	return 100;
-}
