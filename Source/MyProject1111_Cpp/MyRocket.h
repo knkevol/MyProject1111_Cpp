@@ -37,5 +37,6 @@ public:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Practice")
 	TObjectPtr<UProjectileMovementComponent> ProjectileMovement;
 
+	UFUNCTION()
 	void ProcessActorBeginOverlap(AActor* OverlappedActor, AActor* OtherActor);
 };

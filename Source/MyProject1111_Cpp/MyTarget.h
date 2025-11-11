@@ -29,6 +29,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Practice")
 	TObjectPtr<UStaticMeshComponent> Target;
 
+	UFUNCTION()
 	void ProcessTakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);
 
 };
