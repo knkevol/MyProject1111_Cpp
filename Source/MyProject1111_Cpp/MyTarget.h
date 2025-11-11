@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -8,6 +8,7 @@
 
 class UBoxComponent;
 class UStaticMeshComponent;
+class UParticleSystem;
 
 UCLASS()
 class MYPROJECT1111_CPP_API AMyTarget : public AActor
@@ -33,7 +34,21 @@ public:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Practice")
 	TObjectPtr<UStaticMeshComponent> Target;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Data")
+	TObjectPtr<UParticleSystem> Particle;
+
 	UFUNCTION()
 	void ProcessTakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);
+	
+	//virtual void TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
+	
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void DoDesigner();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void DoDesigner2(); //구현X
+	void DoDesigner2_Implementation();
+
 
 };

@@ -17,6 +17,8 @@ AMyTarget::AMyTarget()
 	Target = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Target"));
 	Target->SetupAttachment(Box);
 
+	Tags.Add(TEXT("Target"));
+
 }
 
 // Called when the game starts or when spawned
@@ -37,7 +39,16 @@ void AMyTarget::Tick(float DeltaTime)
 
 void AMyTarget::ProcessTakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser)
 {
+	//float Damage = Super::TakeDamage(Damage, DamagedActor, InstigatedBy, DamageCauser);
 	UE_LOG(LogTemp, Warning, TEXT("ProcessTakeDamage"));
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), Particle, GetActorLocation());
+
+	DoDesigner(); //BP Use
+	DoDesigner2(); //Cpp Use
+	//DoDesigner2_Implementation();
 	K2_DestroyActor();
 }
 
+void AMyTarget::DoDesigner2_Implementation()
+{
+}
