@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "MyTarget.generated.h"
 
+class UBoxComponent;
 class UStaticMeshComponent;
 
 UCLASS()
@@ -26,6 +27,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Practice")
+	TObjectPtr<UBoxComponent> Box;
+
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Practice")
 	TObjectPtr<UStaticMeshComponent> Target;
 

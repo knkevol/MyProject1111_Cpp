@@ -3,6 +3,7 @@
 
 #include "MyTarget.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -11,8 +12,10 @@ AMyTarget::AMyTarget()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	Box = CreateDefaultSubobject<UBoxComponent>(TEXT("Box"));
+	RootComponent = Box;
 	Target = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Target"));
-	RootComponent = Target;
+	Target->SetupAttachment(Box);
 
 }
 
