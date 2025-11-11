@@ -67,12 +67,12 @@ void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	//UEnhancedInputComponent* UIC = Cast<UEnhancedInputComponent>(PlayerInputComponent);
-	//if (UIC)
-	//{
-	//	UIC->BindAction(IA_Fire, ETriggerEvent::Completed, this, &AMyPawn::EnhancedFire);
-	//	UIC->BindAction(IA_Movement, ETriggerEvent::Triggered, this, &AMyPawn::EnhancedMovement);
-	//}
+	UEnhancedInputComponent* UIC = Cast<UEnhancedInputComponent>(PlayerInputComponent);
+	if (UIC)
+	{
+		UIC->BindAction(IA_Fire, ETriggerEvent::Completed, this, &AMyPawn::EnhancedFire);
+		UIC->BindAction(IA_Movement, ETriggerEvent::Triggered, this, &AMyPawn::EnhancedMovement);
+	}
 
 }
 

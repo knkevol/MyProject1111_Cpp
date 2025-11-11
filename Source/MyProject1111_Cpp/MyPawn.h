@@ -56,8 +56,13 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Practice")
 	TObjectPtr<UFloatingPawnMovement> FloatingMovement;
-
+	
+	//Visible Blueprint
+	UFUNCTION(BlueprintCallable, Category = "Control", meta = (ShortToolTip = "Shoot Missile"))
 	void Fire();
+	UFUNCTION(BlueprintCallable, Category = "Control")
+	void Rotate(float InPitch, float InRoll);
+
 	void Pitch(float Value);
 	void Roll(float Value);
 	void EnhancedFire(const FInputActionValue& Value);

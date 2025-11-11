@@ -21,6 +21,8 @@ public:
 	virtual ~AMyPlayerController();
 
 	virtual void BeginPlay() override;
+	virtual void OnPossess(APawn* aPawn) override;
+	virtual void OnUnPossess() override;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Input")
 	TObjectPtr<UInputMappingContext> InputMapping;
