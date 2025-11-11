@@ -14,7 +14,6 @@ class USpringArmComponent;
 class UCameraComponent;
 class UInputAction;
 struct FInputActionValue;
-class AMyRocket;
 
 UCLASS()
 class MYPROJECT1111_CPP_API AMyPawn : public APawn
@@ -70,10 +69,7 @@ public:
 	void EnhancedMovement(const FInputActionValue& Value);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Input")
-	TObjectPtr<UInputAction> IA_Fire;
+	TObjectPtr<class UInputAction> IA_Fire;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Input")
-	TObjectPtr<UInputAction> IA_Movement;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Data")
-	TSubclassOf<class AMyRocket> RocketTemplate;
+	TObjectPtr<class UInputAction> IA_Movement;
 };

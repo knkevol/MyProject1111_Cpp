@@ -41,6 +41,12 @@ AMyPawn::AMyPawn()
 	FloatingMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingMovement"));
 
 
+	ConstructorHelpers::FClassFinder<AMyRocket> BP_RocketTemplate(TEXT("/Script/Engine.Blueprint'/Game/Blueprints/Cpp/BP_MyRocket.BP_MyRocket_C'"));
+	if (BP_RocketTemplate.Succeeded())
+	{
+		RocketTemplate = BP_RocketTemplate.Class;
+	}
+
 }
 
 // Called when the game starts or when spawned
@@ -78,7 +84,12 @@ void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMyPawn::Fire()
 {
-	GetWorld()->SpawnActor<AMyRocket>(AMyRocket::StaticClass(), Arrow->K2_GetComponentToWorld());
+	if (RocketTemplate)
+	{
+		GetWorld()->SpawnActor<AActor>(RocketTemplate, Arrow->K2_GetComponentToWorld());
+	}
+	
+	//GetWorld()->SpawnActor<AMyRocket>(AMyRocket::StaticClass(), Arrow->K2_GetComponentToWorld());
 }
 
 void AMyPawn::Rotate(float InPitch, float InRoll)
