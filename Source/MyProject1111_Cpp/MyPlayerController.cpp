@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "MyPlayerController.h"
@@ -29,7 +29,7 @@ void AMyPlayerController::BeginPlay()
 
 void AMyPlayerController::OnPossess(APawn* aPawn)
 {
-	//Player°¡ Controller¸¦ Àâ´Â Á¤È®ÇÑ ½ÃÁ¡
+	//Playerê°€ Controllerë¥¼ ì¡ëŠ” ì •í™•í•œ ì‹œì 
 	Super::OnPossess(aPawn);
 
 	if (IsLocalPlayerController())
